@@ -56,6 +56,26 @@ monthly_precip <- gather(slo_climate_data,
 ```
 
 ```{r}
+# for kicks, create a reservoir dataframe
+
+reservoir <- data.frame(ID = c("PRB", "SBP", "SBA"),
+                        reservoir = c("Whale Rock","Cachuma","Gibraltar"),
+                        res_tot_cap = c(40662, 193305, 4314), # units are scre feet (can convert to )
+                        res_fill = c(40662*.50, 193305*.50, 4314*.50) # start out each reservoir at 50% capacity in Oct of water year 2002
+                        )
+
+# can use this data frame to calculate influx of rain water to each reservoir, assuming each reservoir was at 50% capacity starting in October of water year 2002. 
+# a test we can use for this is when the reservoir reaches capacity, overflowing and no longer collecting water for use.
+# could be function that converts units of rainfall; units of watershed, and units of reservoir capacity
+# probably easier to just do conversrions in data frame and the use functions to calculate influx
+
+```
+
+
+
+
+
+```{r}
 # start with something easy. 
 # calculate the total water year precipitation.
 
@@ -87,4 +107,11 @@ wy_tot_mo()
 
 
 ```
+
+
+
+
+
+
+
 

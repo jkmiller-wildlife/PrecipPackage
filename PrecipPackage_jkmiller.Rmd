@@ -8,6 +8,8 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(devtools)
+library(testthat)
 ```
 
 The goal of this assignment is to create a package that will be used for assessing climate change impacts and developing mitiation and adaptation strategies
@@ -131,7 +133,7 @@ mean_precip_by_season(monthly_precip, 2014)
 ```{r}
 source("R/predict_flooding.R")
 # To see how this function works you can change the year and use the same precipitation data
-predict_flooding(monthly_precip, 2014)
+predict_flooding(monthly_precip, 2007)
 ```
 
 

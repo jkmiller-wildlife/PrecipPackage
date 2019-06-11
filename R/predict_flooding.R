@@ -1,6 +1,6 @@
 #' Predict Flooding Risk
 #'
-#' This function predictfor a given year
+#' This function predict for a given year
 #' @param precip_data data frame that contains the following information
 #' @return what your function returns (outputs)
 #' @example how to use it

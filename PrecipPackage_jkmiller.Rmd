@@ -40,10 +40,9 @@ Measure of impact functions
 -
 - Predict location and month with highest risk of floods in a year
 Tests
-- Is numeric?
-- Seasons = 4?
-- Months = 12?
-- Precipitation is always positive?
+- For mean precip: months = 12? seasons = 4?
+- For predict flooding: is numeric? is precip always positive?
+-
 
 ```{r}
 # First, find some data.

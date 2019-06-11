@@ -30,6 +30,17 @@ The package should contain:
 - 3 separate tests - (next weeks lecture)
 
 
+## Package structure
+Summarizing functions
+- Mean precipitation by season and by year
+-
+Measure of impact functions
+-
+- 
+Tests
+- Is numeric?
+- Seasons = 4? months = 12
+- 
 
 ```{r}
 # First, find some data.
@@ -110,6 +121,11 @@ wy_tot_mo()
 ```
 
 
+```{r}
+source("R/mean_precip_by_season.R")
+# To see how this function works you can change the year and use the same precipitation data
+mean_precip_by_season(monthly_precip, 2014)
+```
 
 
 

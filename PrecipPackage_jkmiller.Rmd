@@ -36,11 +36,12 @@ Summarizing functions
 -
 Measure of impact functions
 -
-- 
+- Predict location and month with highest risk of floods in a year
 Tests
 - Is numeric?
-- Seasons = 4? months = 12
-- 
+- Seasons = 4?
+- Months = 12?
+- Precipitation is always positive?
 
 ```{r}
 # First, find some data.
@@ -127,6 +128,11 @@ source("R/mean_precip_by_season.R")
 mean_precip_by_season(monthly_precip, 2014)
 ```
 
+```{r}
+source("R/predict_flooding.R")
+# To see how this function works you can change the year and use the same precipitation data
+predict_flooding(monthly_precip, 2014)
+```
 
 
 

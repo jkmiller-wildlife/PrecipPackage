@@ -3,9 +3,13 @@ Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
 Author: Anna Calle and Jamie Miller
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Maintainer: Anna Calle <annagcalle@bren.ucsb.edu>
+Description: This packages contains four functions, 2 that summarize precipitation data, and 2 that measure the impact of precipitation
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 2.1.0)
+VignetteBuilder: knitr

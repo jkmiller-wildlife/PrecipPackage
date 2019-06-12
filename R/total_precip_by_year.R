@@ -25,11 +25,14 @@ total_precip_by_year <- function(precip_data, plot = FALSE) {
     print(wy_tot_plot)
   }
 
-  wy_tot_output <- list('wy_tot' = wy_tot, 'wy_tot_plot' = wy_tot_plot)
+  if(plot == FALSE) {
 
-  return(wy_tot)
+    wy_tot_table <- wy_tot %>%
+      rename("Water Year" = water_year) %>%
+      spread(wy_tot, key = Location, value = sum_precip) %>%
+      knitr::kable()
+    }
 
+  return(wy_tot_table)
 
- # x <- total_precip_by_year(precip_data = monthly_precip, plot = TRUE)
-}
-
+  }

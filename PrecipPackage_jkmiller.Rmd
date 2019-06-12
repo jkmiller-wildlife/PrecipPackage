@@ -166,6 +166,13 @@ wy_tot_plot <- ggplot(wy_tot, aes(x = water_year, y = sum_precip)) +
 
 wy_tot_plot
 
+wy_tot_table <- wy_tot %>% 
+  rename("Water Year" = water_year) %>% 
+  spread(wy_tot, key = Location, value = sum_precip) %>% 
+  knitr::kable()
+
+wy_tot_table
+
 ```
 
 ```{r}
@@ -185,30 +192,38 @@ total_precip_by_year <- function(precip_data, plot = FALSE) {
       labs(x = "Water Year", y = "Total Precipitation (inches)") +
       theme_bw()
     print(wy_tot_plot)      
-      }
+  }
+  
+  if(plot == FALSE) {
+    
+    wy_tot_table <- wy_tot %>% 
+      rename("Water Year" = water_year) %>% 
+      spread(wy_tot, key = Location, value = sum_precip) %>% 
+      knitr::kable()
+    
+  }
 
-  wy_tot_output <- list('wy_tot' = wy_tot, 'wy_tot_plot' = wy_tot_plot)
+#  wy_tot_output <- list('wy_tot' = wy_tot, 'wy_tot_plot' = wy_tot_plot)
   
-  return(wy_tot)
+  return(wy_tot_table)
   
-  
-x <- total_precip_by_year(precip_data = monthly_precip, plot = TRUE)
+
 }
 
 
 ```
 
 ```{r}
-source("R/predict_flooding.R")
-# To see how this function works you can change the year and use the same precipitation data
-total_precip_by_year(monthly_precip, FALSE)
+source("R/total_precip_by_year.R")
+# This function calculates annual precipitation totals for each water year by location. displayed as either a graph (TRUE) or a table (FALSE).
+total_precip_by_year(monthly_precip, TRUE)
 
 ```
 
 ```{r}
 # Take total_precip_by_year output, turn into a multidimensional array, find total precipitation either by location or water year or both.
 
-
+precip_array <- array(data = )
 
 
 

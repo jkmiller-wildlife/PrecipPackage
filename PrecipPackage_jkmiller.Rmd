@@ -223,7 +223,9 @@ total_precip_by_year(monthly_precip, TRUE)
 ```{r}
 # Take total_precip_by_year output, turn into a multidimensional array, find total precipitation either by location or water year or both.
 
-precip_array <- array(data = )
+precip_array <- array(data = monthly_precip$precip,
+                      dim = c(18,3,12),
+                      dimnames = list('Water Year', 'Location', 'Month'))
 
 
 

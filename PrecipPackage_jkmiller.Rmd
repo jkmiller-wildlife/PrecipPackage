@@ -201,8 +201,17 @@ x <- total_precip_by_year(precip_data = monthly_precip, plot = TRUE)
 ```{r}
 source("R/predict_flooding.R")
 # To see how this function works you can change the year and use the same precipitation data
-total_precip_by_year(monthly_precip, TRUE)
+total_precip_by_year(monthly_precip, FALSE)
 
 ```
 
+```{r}
+# Take total_precip_by_year output, turn into a multidimensional array, find total precipitation either by location or water year or both.
+
+
+
+
+
+
+```
 

@@ -149,7 +149,60 @@ source("R/predict_flooding.R")
 predict_flooding(monthly_precip, 2007)
 ```
 
+```{r}
+# Sum of precipitation for each location by water year
 
 
+wy_tot <- monthly_precip %>%
+    group_by(Location, water_year) %>% 
+    summarize(sum_precip = sum(precip)) #%>%
+#    ungroup()
+wy_tot
+
+wy_tot_plot <- ggplot(wy_tot, aes(x = water_year, y = sum_precip)) +
+  geom_col(aes(fill = Location)) +
+  labs(x = "Water Year", y = "Total Precipitation (inches)") +
+  theme_bw()
+
+wy_tot_plot
+
+```
+
+```{r}
+
+
+total_precip_by_year <- function(precip_data, plot = FALSE) {
+
+  wy_tot <- precip_data %>%
+    group_by(Location, water_year) %>% 
+    summarize(sum_precip = sum(precip)) %>%
+    ungroup()
+  
+  if(plot == TRUE) {
+    
+    wy_tot_plot <- ggplot(wy_tot, aes(x = water_year, y = sum_precip)) +
+      geom_col(aes(fill = Location)) +
+      labs(x = "Water Year", y = "Total Precipitation (inches)") +
+      theme_bw()
+    print(wy_tot_plot)      
+      }
+
+  wy_tot_output <- list('wy_tot' = wy_tot, 'wy_tot_plot' = wy_tot_plot)
+  
+  return(wy_tot)
+  
+  
+x <- total_precip_by_year(precip_data = monthly_precip, plot = TRUE)
+}
+
+
+```
+
+```{r}
+source("R/predict_flooding.R")
+# To see how this function works you can change the year and use the same precipitation data
+total_precip_by_year(monthly_precip, TRUE)
+
+```
 
 

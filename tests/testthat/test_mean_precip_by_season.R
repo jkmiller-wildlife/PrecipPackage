@@ -1,31 +1,11 @@
-# Create a test to ensure seasons = 4 and months = 12
-
-expect_that(mean_precip_by_season(precip_data, Season = 4))
-expect_that(mean_precip_by_season(precip_data, month)= 12)
-
-
-
 test_that(
-  "spring_summary_works",
+  "Months equal 12 and seasons equal 4 when using mean_pecip_by_season",
   {
-    clim_data =
-      as.data.frame(
-        cbind(
-          month = c(1:4),
-          day   = rep(1, times = 4),
-          year  = rep(1, times = 4),
-          rain  = rep(0, times = 4),
-          tmax  = c(2, 2, 1, 1),
-          tmin  = rep(0, times = 4)
-        )
-      )
+    data(monthly_precip)
 
-    expect_that(spring_summary(clim_data, spring_months=4)$mean_springP, equals(0))
-    expect_that(spring_summary(clim_data, spring_months=4)$mean_springT, equals(0.5))
-    expect_that(spring_summary(clim_data, spring_months=1)$mean_springT, equals(1))
-    expect_true(spring_summary(clim_data, spring_months=c(1:4))$coldest_springT > -10)
+    expect_that(mean_precip_by_season(precip_data= monthly_precip, year=water_year), length(unique(mean$Season)) == 4)
+    expect_that(mean_precip_by_season(precip_data= monthly_precip, year=water_year), length(unique(monthly_precip$month)) == 12)
   }
 )
-
 
 

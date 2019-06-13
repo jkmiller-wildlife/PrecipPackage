@@ -1,8 +1,9 @@
 #' Mean Precipitation per Season
 #'
 #' This function calculates the mean precipation by season for a given year
-#' @param precip_data data frame that contains the following information
-#' @return what your function returns (outputs)
+#' @param precip_data Data frame that contains the following variables: water_year, Location, ID, month, and precip
+#' @param year Year selected
+#' @return Table of each season and its mean precipitation for the selected year
 #' @example how to use it
 #' @references citations or urls
 #' @author Jamie Miller and Anna Calle

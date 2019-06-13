@@ -1,7 +1,7 @@
-#' Total Precipitation for a each water year
+#' Mean precipitation for each water year
 #'
-#' This function calculates the mean precipation by season for a given year
-#' @param precip_data data frame that contains the following information
+#' This function calculates the mean precipation by month for all years and produces a graph.
+#' @param precip_array array that contains the following information
 #' @return what your function returns (outputs)
 #' @example how to use it
 #' @references citations or urls
@@ -28,18 +28,10 @@ mean_precip_by_month <- function(precip_array, plot = TRUE) {
     print(mean_precip_by_month_plot)
   }
 
-  if(plot == FALSE) {
-
-    mean_precip_by_month_table <- mean_precip_by_month_df %>%
-      rename("Month" = month,
-             "Mean Precipitation (inches)" = mean_precip) %>%
-      knitr::kable(digits = 2)
-  }
-
-
-  return(mean_precip_by_month_table)
+  return(mean_precip_by_month_df)
 
 }
+
 
 
 

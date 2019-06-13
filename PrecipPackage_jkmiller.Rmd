@@ -274,7 +274,7 @@ precip_loc_total_df
 ```{r}
 source("R/mean_precip_by_month.R")
 # This function calculates annual precipitation totals for each water year by location. displayed as either a graph (TRUE) or a table (FALSE).
-mean_precip_by_month(precip_array, FALSE)
+mean_precip_by_month(precip_array, TRUE)
 
 ```
 

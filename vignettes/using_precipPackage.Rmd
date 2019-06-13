@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 library(tidyverse)
 library(devtools)
 library(roxygen2)
+library(testthat)
 library(PrecipPackage)
 
 ```
@@ -86,7 +87,8 @@ predict_flooding(monthly_precip, 2007)
 
 # Anna, I took a stab at how to run/describe this. Please make any edits here and in the calc_water_tax.R documentation
 
-
+# I ran the code as I entered it and got this error so I think I did it wrong.
+# Error in precip_at_location$precip[1, 1] : incorrect number of dimensions
 ```
 
 

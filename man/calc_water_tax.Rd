@@ -11,6 +11,12 @@ calc_water_tax(precip_data, household_consumption, location, month_tax,
 \item{precip_data}{Data frame that contains the following variables: water_year, Location, ID, month, and precip}
 
 \item{household_consumption}{Average household water consumption in gallons. Average in California is 86 gallons}
+
+\item{location}{One of three locations: "Paso Robles", "San Luis Obispo", or "Santa Barbara"}
+
+\item{month_tax}{The three-letter month code}
+
+\item{year}{The water year 2002 through 2019}
 }
 \value{
 Tax price in dollars

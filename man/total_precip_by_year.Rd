@@ -4,7 +4,7 @@
 \alias{total_precip_by_year}
 \title{Total precipitation for a each water year and location}
 \usage{
-total_precip_by_year(precip_data, plot = FALSE)
+total_precip_by_year(precip_data, plot = TRUE)
 }
 \arguments{
 \item{precip_data}{The function uses data from the precipitaion data frame "monthly_precip".}

@@ -4,7 +4,7 @@
 \alias{mean_precip_by_month}
 \title{Mean monthly precipitation}
 \usage{
-mean_precip_by_month(precip_array, plot = TRUE)
+mean_precip_by_month(precip_data, plot = TRUE)
 }
 \arguments{
 \item{precip_array}{The function uses data from the precipitaion array "precip_array".}
@@ -13,7 +13,7 @@ mean_precip_by_month(precip_array, plot = TRUE)
 Returns either a graph or table that summarizes the mean monthly precipitation for all water years (2002-2019).
 }
 \description{
-This function calculates the mean precipation by month for all years and produces a graph to visualize the data.
+This function creates an array from the monthly_precip$precip data frame, water_year, Location, and month. It then calculates the mean precipation by month for all years and produces a graph to visualize the data.
 }
 \references{
 Source: Monthly Observed Precipitation - NWS Cooperative Observers. The following are data from NWS cooperative observers for the current water year and historically back to Water Year 2002. The water year starts on Oct 1 and ends on Sept 30. Precipitation data is provided for each month of the current water year, total precipitation for the water year, the percent of normal for the water year to date, and the percent of the entire water year received to date. \url{https://www.cnrfc.noaa.gov/rainfall_data.php#monthly}

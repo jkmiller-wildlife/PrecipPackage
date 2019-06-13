@@ -22,18 +22,26 @@ library(PrecipPackage)
 
 ```
 
-The PrecipPackage contains 6 functions. 
-Three summarizing data:
+The PrecipPackage contains: 
+Three functions summarizing data
 - Mean Precipitation by Season
 - Mean Precipitation by Month (using a multidimensional array)
 - Total Precipitation by Year
 
-Two measuring impacts:
+Two functions measuring impacts
 - Predict Flooding Risk
 -
 
-One calculating costs of impacts
+One functions calculating costs of impacts
 - Calculate Water Tax
+
+Three tests
+- Months equal 12 and seasons equal 4 when using mean_pecip_by_season
+- Precipitation is always numeric and positive
+- Years equal 18 and Locations equal 3 when using total_precip_by_year
+
+Sample data in and .Rda file
+- monthly_precip.rda
 
 ```{r example}
 # Get precipitation data to un all the functions

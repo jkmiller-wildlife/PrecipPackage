@@ -1,0 +1,44 @@
+---
+title: "ESM 262 - Assignment 5"
+author: "Jamie Miller and Anna Calle"
+date: "June 12, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+This Markdown document contains only the sourced functions to run.
+
+
+```{r}
+source("R/mean_precip_by_season.R")
+# To see how this function works you can change the year and use the same precipitation data
+mean_precip_by_season(monthly_precip, 2014)
+```
+
+
+```{r}
+source("R/predict_flooding.R")
+# To see how this function works you can change the year and use the same precipitation data
+predict_flooding(monthly_precip, 2007)
+```
+
+```{r}
+source("R/total_precip_by_year.R")
+# This function calculates annual precipitation totals for each water year by location. displayed as either a graph (TRUE) or a table (FALSE).
+total_precip_by_year(monthly_precip, TRUE)
+
+```
+
+
+```{r}
+source("R/mean_precip_by_month.R")
+# This function calculates annual precipitation totals for each water year by location. displayed as either a graph (TRUE) or a table (FALSE).
+mean_precip_by_month(precip_array, TRUE)
+
+```
+
+

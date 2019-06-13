@@ -146,7 +146,7 @@ mean_precip_by_season(monthly_precip, 2014)
 ```{r}
 source("R/predict_flooding.R")
 # To see how this function works you can change the year and use the same precipitation data
-predict_flooding(monthly_precip, 2007)
+#predict_flooding(monthly_precip, 2007)
 ```
 
 ```{r}
@@ -277,5 +277,38 @@ source("R/mean_precip_by_month.R")
 mean_precip_by_month(precip_array, TRUE)
 
 ```
+
+
+
+```{r}
+predict_flooding <- function(precip_data, year){
+
+  # Dataframe for month average of all years
+  monthly_precip_average <- precip_data %>%
+    group_by(Location, month) %>%
+    summarize(mean_precip_month = mean(precip))
+
+  # Dataframe for precip in a given year
+  precip_yr <- precip_data %>%
+    filter(water_year == year)
+
+  # Calculate location and month with highest risk of flooding in a year
+  precip_df <- merge(monthly_precip_average, precip_yr,by=c("Location", "month")) %>%
+    mutate(difference = precip - mean_precip_month) %>%
+    filter(difference == max(difference)) %>%
+    select(-ID | water_year)
+
+  colnames(precip_df) <- c("Location", "Month", "Mean Historic Precipitation", "Precipitation", "Difference Between Historic Precipitation and Precipitation")
+
+
+ return(precip_df)
+
+}
+
+
+
+```
+
+
 
 

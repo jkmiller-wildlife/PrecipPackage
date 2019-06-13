@@ -7,10 +7,12 @@
 mean_precip_by_season(precip_data, year)
 }
 \arguments{
-\item{precip_data}{data frame that contains the following information}
+\item{precip_data}{Data frame that contains the following variables: water_year, Location, ID, month, and precip}
+
+\item{year}{Year selected}
 }
 \value{
-what your function returns (outputs)
+Table of each season and its mean precipitation for the selected year
 }
 \description{
 This function calculates the mean precipation by season for a given year

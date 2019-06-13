@@ -7,13 +7,15 @@
 predict_flooding(precip_data, year)
 }
 \arguments{
-\item{precip_data}{data frame that contains the following information}
+\item{precip_data}{Data frame that contains the following variables: water_year, Location, ID, month, and precip.}
+
+\item{year}{Year selected}
 }
 \value{
-what your function returns (outputs)
+Location, month, mean historic precipitation, precipitation and difference between mean historic precipitation and precipitation of place with highest risk of flooding
 }
 \description{
-This function predict for a given year
+This function predicts the location and month with the highest risk of flooding for a given year. This is determined by calculating the location and month that are the farthest away from the historic precipitation average.
 }
 \references{
 citations or urls

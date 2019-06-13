@@ -2,15 +2,15 @@
 % Please edit documentation in R/total_precip_by_year.R
 \name{total_precip_by_year}
 \alias{total_precip_by_year}
-\title{Total precipitation for a each water year, separted by location}
+\title{Total precipitation for a each water year and location}
 \usage{
 total_precip_by_year(precip_data, plot = FALSE)
 }
 \arguments{
-\item{precip_data}{The function uses data from a precipitaion data frame that contains the following information}
+\item{precip_data}{The function uses data from the precipitaion data frame "monthly_precip".}
 }
 \value{
-Returns a graph that
+Returns either a graph or table that summarizes the total annual precipitation for each water year and location.
 }
 \description{
 This function calculates the total precipation for each year at a given location and produces a graph to visualize the data.

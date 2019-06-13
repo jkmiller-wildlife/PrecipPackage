@@ -12,7 +12,7 @@
 \item precip: Precipitation measured in inches
 }}
 \source{
-NWS Cooperative Observers \url{https://www.cnrfc.noaa.gov/rainfall_data.php#monthly}
+\url{https://www.cnrfc.noaa.gov/rainfall_data.php#monthly}
 }
 \usage{
 monthly_precip

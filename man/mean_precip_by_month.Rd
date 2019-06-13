@@ -2,15 +2,15 @@
 % Please edit documentation in R/mean_precip_by_month.R
 \name{mean_precip_by_month}
 \alias{mean_precip_by_month}
-\title{Mean precipitation for each water year}
+\title{Mean monthly precipitation}
 \usage{
 mean_precip_by_month(precip_array, plot = TRUE)
 }
 \arguments{
-\item{precip_array}{array that contains the following information}
+\item{precip_array}{The function uses data from the precipitaion array "precip_array".}
 }
 \value{
-what your function returns (outputs)
+Returns either a graph or table that summarizes the mean monthly precipitation for all water years (2002-2019).
 }
 \description{
 This function calculates the mean precipation by month for all years and produces a graph to visualize the data.

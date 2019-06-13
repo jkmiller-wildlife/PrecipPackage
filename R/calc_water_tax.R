@@ -3,6 +3,9 @@
 #' This function calculates the monthly tax on consumers for safe drinking water. The tax depends on household water consumption as well as availability of clean water sources. During low precipitation months the city has to turn to more expensive sources of water like desalination or imported water, raising the price of the tax.
 #' @param precip_data Data frame that contains the following variables: water_year, Location, ID, month, and precip
 #' @param household_consumption Average household water consumption in gallons. Average in California is 86 gallons
+#' @param location One of three locations: "Paso Robles", "San Luis Obispo", or "Santa Barbara"
+#' @param month_tax The three-letter month code
+#' @param year The water year 2002 through 2019
 #' @return Tax price in dollars
 #' @example how to use it
 #' @references citations or urls
@@ -26,5 +29,4 @@ calc_water_tax = function(precip_data, household_consumption, location, month_ta
 
   return(tax_price)
 }
-
 

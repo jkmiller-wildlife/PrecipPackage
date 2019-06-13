@@ -21,45 +21,74 @@ library(PrecipPackage)
 
 ```
 
-The precipPackage contains 5 functions 
-Two summarizing data:
+The PrecipPackage contains 6 functions. 
+Three summarizing data:
 - Mean Precipitation by Season
--
+- Mean Precipitation by Month (using a multidimensional array)
+- Total Precipitation by Year
+
 Two measuring impacts:
 - Predict Flooding Risk
 -
+
 One calculating costs of impacts
--
+- Calculate Water Tax
 
 ```{r example}
-
-# Get precipitation data
+# Get precipitation data to un all the functions
 data("monthly_precip")
 
-# Mean Precipitation by Season Function
+```
+
+```{r}
+### Mean Precipitation by Season
 # To see how this function works you can change the year and use the same precipitation data
+
 mean_precip_by_season(monthly_precip, 2014)
 
 ```
 
 ```{r}
-# Predict Flooding Risk
-# To see how this function works you can change the year and use the same precipitation data
-predict_flooding(monthly_precip, 2007)
-```
+### Mean Precipitation by Month (using a multidimensional array)
+# This function calculates mean monthly annual precipitation for all water years using a multidimensional array, displayed as either a graph (TRUE) or a table (FALSE).
 
-```{r}
-# This function calculates annual precipitation totals for each water year by location. displayed as either a graph (TRUE) or a table (FALSE).
-total_precip_by_year(monthly_precip, FALSE)
-
-```
-
-
-
-
-```{r}
-# Calculate mean monthly precipitation using a multidimensional array
-# This function calculates mean monthly annual precipitation for all water years, displayed as either a graph (TRUE) or a table (FALSE).
 mean_precip_by_month(monthly_precip, TRUE)
 
 ```
+
+```{r}
+### Total Precipitation by Year
+# This function calculates annual precipitation totals for each water year by location. displayed as either a graph (TRUE) or a table (FALSE).
+
+total_precip_by_year(monthly_precip, TRUE)
+
+```
+
+```{r}
+### Predict Flooding Risk
+# To see how this function works you can change the year and use the same precipitation data
+
+predict_flooding(monthly_precip, 2007)
+```
+
+
+```{r}
+### Calculate Water Tax
+# Calculates water tax based on housegold consumption, location, the tax month, and year.
+# For the function calc_water_tax(precip_data, household_consumption, location, month_tax, year) enter:
+   # precip_data = the precipitation dataset
+   # household_consumption = a number of how much water is consumed
+   # location = "Paso Robles", "San Luis Obispo", or "Santa Barbara"
+   # month_tax = three-letter month code
+   # year = Year 2002 through 2019
+
+# calc_water_tax(monthly_precip, 100, "San Luis Obispo", "OCT", 2012)
+
+# Anna, I took a stab at how to run/describe this. Please make any edits here and in the calc_water_tax.R documentation
+
+
+```
+
+
+
+

@@ -15,13 +15,11 @@
 
 # Take monthly_precip dataframe, turn into a multidimensional array, find mean precipitation either by month, location, or water year, or all.
 
-Location <- c("Paso Robles", "San Luis Obispo", "Santa Barbara")
-Month <- c("Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep")
 
 precip_array <- array(data = monthly_precip$precip,
                       dim = c(18,3,12),
                       dimnames = list(2002:2019, # water year labels
-                                      Location,
-                                      Month))
+                                      Location = c("Paso Robles", "San Luis Obispo", "Santa Barbara"),
+                                      Month = c("Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep")))
 
 

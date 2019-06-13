@@ -9,7 +9,7 @@
 #' \item month: Three-letter abreviation of precipitation month
 #' \item precip: Precipitation measured in inches
 #' }
-#' @source NWS Cooperative Observers \url{https://www.cnrfc.noaa.gov/rainfall_data.php#monthly}
+#' @source \url{https://www.cnrfc.noaa.gov/rainfall_data.php#monthly}
 #' @author Anna Calle and Jamie Miller
 #'
 "monthly_precip"

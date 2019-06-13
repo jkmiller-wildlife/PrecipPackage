@@ -1,8 +1,9 @@
 #' Predict Flooding Risk
 #'
-#' This function predict for a given year
-#' @param precip_data data frame that contains the following information
-#' @return what your function returns (outputs)
+#' This function predicts the location and month with the highest risk of flooding for a given year. This is determined by calculating the location and month that are the farthest away from the historic precipitation average.
+#' @param precip_data Data frame that contains the following variables: water_year, Location, ID, month, and precip.
+#' @param year Year selected
+#' @return Location, month, mean historic precipitation, precipitation and difference between mean historic precipitation and precipitation of place with highest risk of flooding
 #' @example how to use it
 #' @references citations or urls
 #' @author Jamie Miller and Anna Calle
@@ -11,18 +12,21 @@
 predict_flooding <- function(precip_data, year){
 
   # Dataframe for month average of all years
-  mean_precip_all_yrs <- precip_data %>%
+  monthly_precip_average <- precip_data %>%
     group_by(Location, month) %>%
     summarize( mean_precip_month = mean(precip))
 
   # Dataframe for precip in a given year
-  mean_precip_yr <- precip_data %>%
+  precip_yr <- precip_data %>%
     filter( water_year == year)
 
   # Calculate location and month with highest risk of flooding in a year
-  precip_df <- merge(mean_precip_all_yrs, mean_precip_yr,by=c("Location", "month")) %>% mutate( difference = precip - mean_precip_month) %>%
+  precip_df <- merge(monthly_precip_average, precip_yr,by=c("Location", "month")) %>% mutate( difference = precip - mean_precip_month) %>%
     filter( difference == max(difference)) %>%
+    select(-ID | water_year)
+  colnames(precip_df) <- c("Location", "Month", "Mean Historic Precipitation", "Precipitation", "Difference Between Historic Precipitation and Precipitation")
     select(-Location)
+>>>>>>> 2bbcda88975ae229082675c5242da4faaf38fbc8
 
  return(precip_df)
 

@@ -9,13 +9,27 @@
 #'
 
 
-mean_precip_by_month <- function(precip_array, plot = TRUE) {
 
+
+
+
+mean_precip_by_month <- function(precip_data, plot = TRUE) {
+
+  # Create an array from the data frame
+  precip_array <- array(data = precip_data$precip,
+                      dim = c(18,3,12),
+                      dimnames = list(2002:2019, # water year labels
+                                      Location = c("Paso Robles", "San Luis Obispo", "Santa Barbara"),
+                                      Month = c("Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep")))
+
+  # Run calculation on the array
   precip_month_mean <- apply(precip_array, MARGIN = 3, FUN = mean)
 
+  # Put calculation back in dataframe
   mean_precip_by_month_df <- data.frame(month = c("Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"),
                                         mean_precip = precip_month_mean)
 
+  # Graph it
   if(plot == TRUE) {
 
     mean_precip_by_month_df$month = factor(mean_precip_by_month_df$month, levels = month.abb)

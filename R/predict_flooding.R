@@ -23,7 +23,7 @@ predict_flooding <- function(precip_data, year){
   # Calculate location and month with highest risk of flooding in a year
   precip_df <- merge(monthly_precip_average, precip_yr,by=c("Location", "month")) %>% mutate( difference = precip - mean_precip_month) %>%
     filter( difference == max(difference)) %>%
-    select(-ID | water_year)
+    select(-Location | water_year)
   colnames(precip_df) <- c("Location", "Month", "Mean Historic Precipitation", "Precipitation", "Difference Between Historic Precipitation and Precipitation")
     select(-Location)
 >>>>>>> 2bbcda88975ae229082675c5242da4faaf38fbc8

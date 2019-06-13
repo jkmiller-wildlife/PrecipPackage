@@ -8,6 +8,14 @@ mean_precip_by_month(precip_data, plot = TRUE)
 }
 \arguments{
 \item{precip_array}{The function uses data from the precipitaion array "precip_array".}
+
+\item{water_year:}{From 2002 to 2019. The water year starts on October 1 and ends on September 30.}
+
+\item{Location:}{Paso Robles, San Luis Obispo, and Santa Barbara}
+
+\item{month:}{Three-letter abreviation of precipitation month}
+
+\item{precip:}{Precipitation measured in inches}
 }
 \value{
 Returns either a graph or table that summarizes the mean monthly precipitation for all water years (2002-2019).

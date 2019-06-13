@@ -49,6 +49,15 @@ predict_flooding(monthly_precip, 2007)
 ```
 
 ```{r}
+# This function calculates annual precipitation totals for each water year by location. displayed as either a graph (TRUE) or a table (FALSE).
+total_precip_by_year(monthly_precip, FALSE)
+
+```
+
+
+
+
+```{r}
 # Calculate mean monthly precipitation using a multidimensional array
 # This function calculates mean monthly annual precipitation for all water years, displayed as either a graph (TRUE) or a table (FALSE).
 mean_precip_by_month(monthly_precip, TRUE)

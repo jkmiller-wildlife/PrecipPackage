@@ -11,7 +11,7 @@ library(tidyverse)
 library(PrecipPackage)
 ```
 
-This Markdown document contains only the sourced functions to run.
+This Markdown document contains only the sourced functions to run. It is only to test that they are functioning.
 
 
 ```{r}
@@ -38,7 +38,7 @@ total_precip_by_year(monthly_precip, TRUE)
 ```{r}
 source("R/mean_precip_by_month.R")
 # This function calculates annual precipitation totals for each water year by location. displayed as either a graph (TRUE) or a table (FALSE).
-mean_precip_by_month(precip_array, TRUE)
+mean_precip_by_month(monthly_precip, TRUE)
 
 ```
 

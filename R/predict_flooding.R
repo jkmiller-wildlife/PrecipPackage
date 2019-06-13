@@ -25,6 +25,8 @@ predict_flooding <- function(precip_data, year){
     filter( difference == max(difference)) %>%
     select(-ID | water_year)
   colnames(precip_df) <- c("Location", "Month", "Mean Historic Precipitation", "Precipitation", "Difference Between Historic Precipitation and Precipitation")
+    select(-Location)
+>>>>>>> 2bbcda88975ae229082675c5242da4faaf38fbc8
 
  return(precip_df)
 

@@ -110,7 +110,7 @@ wy_tot <- function(x) {
   sum(monthly_precip$precip)
 }
 
-wy_tot() # 829.49 is correct
+#wy_tot() # 829.49 is correct
 
 ##################
 
@@ -119,7 +119,7 @@ wy_ave <- function(x) {
   ave(monthly_precip$precip)
 }
 
-wy_ave() # this gave me 632 values of 1.312484, which is correct, but why 632 of them?
+#wy_ave() # this gave me 632 values of 1.312484, which is correct, but why 632 of them?
 
 ##################
 
@@ -130,7 +130,7 @@ wy_tot_mo <- function(x) {
 
 }
 
-wy_tot_mo() 
+#wy_tot_mo() 
 
 # Making a change!
 
@@ -274,7 +274,7 @@ precip_loc_total_df
 ```{r}
 source("R/mean_precip_by_month.R")
 # This function calculates annual precipitation totals for each water year by location. displayed as either a graph (TRUE) or a table (FALSE).
-mean_precip_by_month(precip_array, FALSE)
+mean_precip_by_month(precip_array, TRUE)
 
 ```
 

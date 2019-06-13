@@ -1,10 +1,10 @@
-#' Total Precipitation for a each water year
+#' Mean precipitation for each water year
 #'
-#' This function calculates the mean precipation by season for a given year
-#' @param precip_data data frame that contains the following information
+#' This function calculates the mean precipation by month for all years and produces a graph to visualize the data.
+#' @param precip_array array that contains the following information
 #' @return what your function returns (outputs)
 #' @example how to use it
-#' @references citations or urls
+#' @references Source: Monthly Observed Precipitation - NWS Cooperative Observers. The following are data from NWS cooperative observers for the current water year and historically back to Water Year 2002. The water year starts on Oct 1 and ends on Sept 30. Precipitation data is provided for each month of the current water year, total precipitation for the water year, the percent of normal for the water year to date, and the percent of the entire water year received to date. https://www.cnrfc.noaa.gov/rainfall_data.php#monthly
 #' @author Jamie Miller and Anna Calle
 #'
 
@@ -28,18 +28,10 @@ mean_precip_by_month <- function(precip_array, plot = TRUE) {
     print(mean_precip_by_month_plot)
   }
 
-  if(plot == FALSE) {
-
-    mean_precip_by_month_table <- mean_precip_by_month_df %>%
-      rename("Month" = month,
-             "Mean Precipitation (inches)" = mean_precip) %>%
-      knitr::kable(digits = 2)
-  }
-
-
-  return(mean_precip_by_month_table)
+  return(mean_precip_by_month_df)
 
 }
+
 
 
 

@@ -15,7 +15,7 @@ predict_flooding(precip_data, year)
 Location, month, mean historic precipitation, precipitation and difference between mean historic precipitation and precipitation of place with highest risk of flooding
 }
 \description{
-This function predicts the location and month with the highest risk of flooding for a given year. This is determined by calculating the location and month that are the farthest away from the historic precipitation average.
+This function predicts the location and month that had the highest risk of flooding in a given year. This is determined by calculating the location and month that have the greatest positive difference from the historic precipitation average.
 }
 \references{
 citations or urls

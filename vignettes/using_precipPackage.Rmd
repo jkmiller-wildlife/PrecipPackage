@@ -1,0 +1,48 @@
+---
+title: "using_precipPackage"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{using_precipPackage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+```{r setup}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(tidyverse)
+library(PrecipPackage)
+
+```
+
+The precipPackage contains 5 functions 
+Two summarizing data:
+- Mean Precipitation by Season
+-
+Two measuring impacts:
+- Predict Flooding Risk
+-
+One calculating costs of impacts
+-
+
+```{r example}
+
+# Get precipitation data
+data("monthly_precip")
+
+# Mean Precipitation by Season Function
+# To see how this function works you can change the year and use the same precipitation data
+mean_precip_by_season(monthly_precip, 2014)
+
+```
+
+```{r}
+# Predict Flooding Risk
+# To see how this function works you can change the year and use the same precipitation data
+predict_flooding(monthly_precip, 2007)
+```
+

@@ -4,13 +4,12 @@
 \name{monthly_precip}
 \alias{monthly_precip}
 \title{Monthly Observed Precipitation}
-\format{A data frame with 632 observations and 5 variables
+\format{A data frame with 632 observations and 4 variables.
 \itemize{
-\item water_year Starting from 2002 to 2019
-\item ID Standardized ID such that PRB = PASO ROBLES, SBP = SAN LUIS OBISPO, and SBA = SANTA BARBARA
-\item Location Paso Robles, San Luis Obispo, and Santa Barbara
-\item month Three letter abreviation of precipitation month
-\item precip Precipitation measured in inches
+\item water_year: From 2002 to 2019. The water year starts on October 1 and ends on September 30.
+\item Location: Paso Robles, San Luis Obispo, and Santa Barbara
+\item month: Three-letter abreviation of precipitation month
+\item precip: Precipitation measured in inches
 }}
 \source{
 NWS Cooperative Observers \url{https://www.cnrfc.noaa.gov/rainfall_data.php#monthly}

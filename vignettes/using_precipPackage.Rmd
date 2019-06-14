@@ -30,7 +30,8 @@ Three functions summarizing data
 
 Two functions measuring impacts
 - Predict Flooding Risk
--
+- Number of months where monthly precipitation is above the annual mean
+- Number of months where monthly precipitation is below the annual mean
 
 One functions calculating costs of impacts
 - Calculate Water Tax
@@ -102,17 +103,15 @@ predict_flooding(monthly_precip, 2007)
 
 
 ```{r}
-
+### Number of months where monthly precipitation is above the annual mean
 calc_months_above_mean(monthly_precip)
-
 
 ```
 
 
 ```{r}
-
+### Number of months where monthly precipitation is below the annual mean
 calc_months_below_mean(monthly_precip)
-
 
 ```
 

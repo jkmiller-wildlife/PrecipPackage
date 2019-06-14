@@ -1,10 +1,11 @@
 test_that(
-  "Precipitation is always numeric and positive",
+  "Precipitation in locations with risk of flooding is higher than average historic precipitation",
   {
     data(monthly_precip)
 
-    expect_that(mean_precip_by_season(precip_data= monthly_precip, year=water_year), class(monthly_precip$precip) == "numeric")
-    expect_true(mean_precip_by_season(precip_data= monthly_precip, year=water_year), class(monthly_precip$precip) >= 0)
+    expect_true( predict_flooding(monthly_precip, 2013)$"Precipitation">predict_flooding(monthly_precip, 2013)$"Mean Historic Precipitation"
+    )
   }
 )
+
 

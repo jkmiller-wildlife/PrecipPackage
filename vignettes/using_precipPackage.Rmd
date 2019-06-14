@@ -83,6 +83,24 @@ predict_flooding(monthly_precip, 2007)
 
 
 ```{r}
+### Number of months where monthly precipitation is above the annual mean
+# This graph is an index of how many wet months are in each year from 2002-2019. A longer dataset would show if there is a trend in rainy or dry years.
+
+calc_months_above_mean(monthly_precip)
+
+```
+
+
+```{r}
+### Number of months where monthly precipitation is below the annual mean
+# This graph is an index of how many dry months are in each year from 2002-2019. A longer dataset would show if there is a trend in rainy or dry years.
+
+calc_months_below_mean(monthly_precip)
+
+```
+
+
+```{r}
 ### Calculate Water Tax
 # Calculates water tax based on housegold consumption, location, the tax month, and year.
 # For the function calc_water_tax(precip_data, household_consumption, location, month_tax, year) enter:
@@ -98,20 +116,5 @@ predict_flooding(monthly_precip, 2007)
 
 # I ran the code as I entered it and got this error so I think I did it wrong.
 # Error in precip_at_location$precip[1, 1] : incorrect number of dimensions
-```
-
-
-
-```{r}
-### Number of months where monthly precipitation is above the annual mean
-calc_months_above_mean(monthly_precip)
-
-```
-
-
-```{r}
-### Number of months where monthly precipitation is below the annual mean
-calc_months_below_mean(monthly_precip)
-
 ```
 

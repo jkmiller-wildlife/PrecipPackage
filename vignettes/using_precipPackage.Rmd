@@ -101,4 +101,18 @@ predict_flooding(monthly_precip, 2007)
 
 
 
+```{r}
+
+calc_months_above_mean(monthly_precip)
+
+
+```
+
+
+```{r}
+
+calc_months_below_mean(monthly_precip)
+
+
+```
 

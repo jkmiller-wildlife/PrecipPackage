@@ -28,7 +28,7 @@ Three functions summarizing data
 - Mean Precipitation by Month (using a multidimensional array)
 - Total Precipitation by Year
 
-Two functions measuring impacts
+Three functions measuring impacts
 - Predict Flooding Risk
 - Number of months where monthly precipitation is above the annual mean
 - Number of months where monthly precipitation is below the annual mean

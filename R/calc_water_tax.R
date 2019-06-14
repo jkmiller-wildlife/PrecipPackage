@@ -11,7 +11,6 @@
 #' @references citations or urls
 #' @author Jamie Miller and Anna Calle
 #'
-
 calc_water_tax = function(precip_data, household_consumption, location, month_tax, year) {
 
   # Precipitation at location of household in specified year and month
@@ -21,12 +20,13 @@ calc_water_tax = function(precip_data, household_consumption, location, month_ta
     filter( month == month_tax) %>%
     select(precip)
 
-  precip_number <- as.double(precip_at_location$precip[1,1])
-    colnames(precip_number) <- NULL
+  precip_number <- as.double(precip_at_location$precip[1])
 
-    # Tax price
+  # Tax price
   tax_price <- (household_consumption/100) + precip_number
 
   return(tax_price)
 }
+
+
 

@@ -24,7 +24,8 @@ predict_flooding <- function(precip_data, year){
   precip_df <- merge(monthly_precip_average, precip_yr,by=c("Location", "month")) %>%
     mutate(difference = precip - mean_precip_month) %>%
     filter(difference == max(difference)) %>%
-    select(-water_year)
+    select(-water_year) %>%
+    select(-ID)
 
   colnames(precip_df) <- c("Location", "Month", "Mean Historic Precipitation", "Precipitation", "Difference Between Historic Precipitation and Precipitation")
 
